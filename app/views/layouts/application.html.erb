@@ -9,6 +9,8 @@
 <body>
 
 <%= yield %>
-
+<footer>
+  <div><%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE' %></div>
+</footer>
 </body>
 </html>
