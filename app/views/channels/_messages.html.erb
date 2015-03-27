@@ -1,0 +1,6 @@
+<% @channel.messages.each do |message| %>
+  <div>
+    <div><%= message.user.email %></div><div><%= message.text %></div><div><%= message.created_at %></div>
+  </div>
+  
+<% end %>
