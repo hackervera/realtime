@@ -3,6 +3,7 @@
 one:
   name: MyText
   topic: MyText
+  id: 1
 
 two:
   name: MyText

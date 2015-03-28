@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :messages
+  resources :messages, except: [:new, :show]
 
   resources :channels
-
+  root 'channels#index'
   devise_for :users
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

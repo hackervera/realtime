@@ -1,6 +1,6 @@
-<% @channel.messages.each do |message| %>
+<% @channel.messages.last(50).each do |message| %>
   <div>
-    <div><%= message.user.email %></div><div><%= message.text %></div><div><%= message.created_at %></div>
+    <div><%= react_component('Message', {email: message.user.email, text: message.text}) %></div>
   </div>
   
 <% end %>

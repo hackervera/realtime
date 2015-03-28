@@ -1,18 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @channel.name %>
-</p>
+<h1><%= @channel.name %></h1>
+<h2><%= @channel.topic %></h2>
 
-<p>
-  <strong>Topic:</strong>
-  <%= @channel.topic %>
-</p>
 
+<div id="all-messages">
 <%= render 'messages' %>
+<%= react_component('MessageContainer', {channelName: @channel.name}) %>
+</div>
+
 
 <%= render 'messages/form' %>
-
-<%= link_to 'Edit', edit_channel_path(@channel) %> |
-<%= link_to 'Back', channels_path %>

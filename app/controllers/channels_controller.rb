@@ -1,12 +1,21 @@
+require 'reloader/sse'
+
 class ChannelsController < ApplicationController
   before_action :set_channel, only: [:show, :edit, :update, :destroy]
+  before_action :check_login
+  include ActionController::Live
 
   # GET /channels
   # GET /channels.json
   def index
     @channels = Channel.all
   end
-
+  
+  def listen
+    binding.pry
+    @channel = Channel.find(params["id"])
+  end
+  
   # GET /channels/1
   # GET /channels/1.json
   def show
@@ -66,6 +75,14 @@ class ChannelsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_channel
       @channel = Channel.find(params[:id])
+    end
+    
+    def check_login
+      begin
+        authenticate_user!
+      rescue
+        render 'application/index'
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

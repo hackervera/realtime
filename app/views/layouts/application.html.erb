@@ -2,15 +2,16 @@
 <html>
 <head>
   <title>Realtime</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="container">
 
 <%= yield %>
 <footer>
-  <div><%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE' %></div>
+  <div><%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE' if current_user %></div>
 </footer>
 </body>
 </html>

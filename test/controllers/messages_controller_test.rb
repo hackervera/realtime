@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class MessagesControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
   setup do
     @message = messages(:one)
+    @channel = channels(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do

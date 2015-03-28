@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  text: MyText
+  text: Hello world
+  channel: Channel
+  user: User
 
 two:
-  text: MyText
+  text: Second Message
+  channel: Channel
+  user: User
