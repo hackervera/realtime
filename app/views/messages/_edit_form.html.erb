@@ -1,0 +1,23 @@
+<%= form_for(@message, remote: true) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" id="text-entry">
+    <%= f.label "Enter your message:" %><br>
+    <%= f.text_field :text, size: "80x2", autofocus: true, class: "form-control" %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :channel_id, value: @message.channel.id %>
+  </div>
+  <div class="actions">
+    <!-- <%= f.submit %> -->
+  </div>
+<% end %>

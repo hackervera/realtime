@@ -3,8 +3,8 @@ require 'test_helper'
 class ChannelsControllerTest < ActionController::TestCase
   include Devise::TestHelpers
   setup do
-    @channel = channels(:one)
-    sign_in users(:one)
+    @channel = channels(:first_channel)
+    sign_in users(:first_user)
   end
 
   test "should get index" do

@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+first_message:
   text: Hello world
-  channel: Channel
-  user: User
+  channel: first_channel
+  user: first_user
 
-two:
+second_message:
   text: Second Message
-  channel: Channel
-  user: User
+  channel: second_channel
+  user: second_user

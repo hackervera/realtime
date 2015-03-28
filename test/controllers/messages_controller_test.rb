@@ -3,9 +3,9 @@ require 'test_helper'
 class MessagesControllerTest < ActionController::TestCase
   include Devise::TestHelpers
   setup do
-    @message = messages(:one)
-    @channel = channels(:one)
-    sign_in users(:one)
+    @message = messages(:first_message)
+    @channel = channels(:first_channel)
+    sign_in users(:first_user)
   end
 
   test "should get index" do
@@ -14,26 +14,17 @@ class MessagesControllerTest < ActionController::TestCase
     assert_not_nil assigns(:messages)
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
 
   test "should create message" do
     assert_difference('Message.count') do
-      post :create, message: { text: @message.text }
+      post :create, message: { text: @message.text, channel_id: @channel.id }
     end
 
-    assert_redirected_to message_path(assigns(:message))
-  end
-
-  test "should show message" do
-    get :show, id: @message
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @message
+    get :edit, id: @message, message: {channel_id: @channel.id}
     assert_response :success
   end
 

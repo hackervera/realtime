@@ -1,10 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+first_channel:
   name: MyText
   topic: MyText
-  id: 1
 
-two:
+first_channel:
   name: MyText
   topic: MyText

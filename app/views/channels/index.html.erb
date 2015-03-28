@@ -3,5 +3,6 @@
 <h1>Available Channels</h1>
 <% @channels.each do |channel| %>
   <div><%= link_to channel.name, channel_path(channel.id) %> : <%= channel.topic %></div>
-
 <% end %>
+
+<div id="new-channel"><%= link_to 'Create new channel!', new_channel_path %></div>
