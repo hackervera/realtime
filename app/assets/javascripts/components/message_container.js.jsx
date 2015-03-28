@@ -13,7 +13,7 @@ var MessageContainer = React.createClass({
     this.scrollToBottom();
   },
   getInitialState: function(){
-    var dispatcher = new WebSocketRails('localhost:3000/websocket');
+    var dispatcher = new WebSocketRails(window.location.host+'/websocket');
     var channelName = this.props.channelName;
     console.log("Test");
     console.log(channelName);
