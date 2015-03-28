@@ -8,6 +8,7 @@ gem 'pg'
 gem 'puma'
 gem 'websocket-rails'
 gem "factory_girl_rails", "~> 4.0"
+gem 'rails_12factor', group: :production
 gem 'react-rails', github: 'reactjs/react-rails'
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
