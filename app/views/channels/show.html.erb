@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @channel.name %></h1>
-<h2><%= @channel.topic %></h2>
+
+<ol class="breadcrumb">
+  <li><%= link_to 'Channels', channels_path %></li>
+  <li class="active"><%= @channel.name %></li>
+</ol>
+
+<p class="lead"><%= @channel.topic %></p>
 
 
 <div id="all-messages">

@@ -15,7 +15,6 @@ var MessageContainer = React.createClass({
   getInitialState: function(){
     var dispatcher = new WebSocketRails('localhost:3000/websocket');
     var channelName = this.props.channelName;
-    //var channelName = "tester";
     console.log("Test");
     console.log(channelName);
     var channel = dispatcher.subscribe(channelName);
@@ -27,6 +26,7 @@ var MessageContainer = React.createClass({
     return {key: []};
   },
   render: function() {
+    console.log("FOO")
     return <div>{this.state}</div>;
   }
 });
